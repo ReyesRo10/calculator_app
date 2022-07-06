@@ -36,6 +36,7 @@ keys.addEventListener("click", (e) => {
       } else {
         display.textContent = displayedNum + keyContent;
       }
+      calculator.dataset.previousKeyType = "number";
     }
     //Operator key
     if (
@@ -50,15 +51,23 @@ keys.addEventListener("click", (e) => {
       calculator.dataset.previousKeyType = "operator";
       calculator.dataset.firstValue = displayedNum;
       calculator.dataset.operator = action;
+      calculator.dataset.previousKeyType = "calculate";
     }
     //Decimal key
     if (action === "decimal") {
-      display.textContent = displayedNum + ".";
+      //Do nothing if string has a dot
+      if (!displayedNum.includes(".")) {
+        display.textContent = displayedNum + ".";
+      } else if (previousKeyType === "operator") {
+        display.textContent = "0.";
+      }
+      calculator.dataset.previousKeyType = "decimal";
     }
 
     //clear key
     if (action === "clear") {
       console.log("clear key!");
+      calculator.dataset.previousKeyType = "clear";
     }
 
     //Calculate key
