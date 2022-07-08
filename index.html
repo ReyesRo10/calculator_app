@@ -4,31 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Calculator App</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
   </head>
+  <header>
+    <h2>Basic Calculator App</h2>
+  </header>
   <body>
-    <div class="grid-layout">
-      <div class="display">display</div>
-      <div class="clear">clear</div>
-      <div class="delate">delate</div>
-      <div class="box seven">7</div>
-      <div class="box">8</div>
-      <div class="box">9</div>
-      <div class="box">/</div>
-      <div class="box">4</div>
-      <div class="box">5</div>
-      <div class="box">6</div>
-      <div class="box">*</div>
-      <div class="box">1</div>
-      <div class="box">2</div>
-      <div class="box">3</div>
-      <div class="box">-</div>
-      <div class="box">.</div>
-      <div class="box">0</div>
-      <div class="box">=</div>
-      <div class="box">+</div>
+    <div class="calculator">
+      <div class="calculator_display">0</div>
+      <div class="calculator_keys">
+        <button class="key-clear" data-action="clear">AC</button>
+        <button class="key--operator" data-action="divide">/</button>
+        <button class="key--operator" data-action="multiply">*</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="key--operator" data-action="substract">-</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="key--operator" data-action="add">+</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="key-equal" data-action="calculate">=</button>
+        <button class="key-zero">0</button>
+        <button data-action="decimal">.</button>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
+  <footer>
+    <p>Copyrigth © 2022 Rodrigo León</p>
+  </footer>
 </html>
